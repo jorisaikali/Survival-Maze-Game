@@ -32,6 +32,9 @@ public class PlayerMovement : MonoBehaviour {
 
         if (!lockRotation) // Check if rotatio is locked, if not locked, allow rotating
             Look();
+
+
+        
     }
 
     // ------------------------ Moving the player ------------------------ //
@@ -67,7 +70,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         Vector3 rayOrigin = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f, 0));
         RaycastHit hit;
-
+    
         if (Physics.Raycast(rayOrigin, Camera.main.transform.forward, out hit, camRayLength, mask))
         {
             gameObjectHit = hit.transform.gameObject;

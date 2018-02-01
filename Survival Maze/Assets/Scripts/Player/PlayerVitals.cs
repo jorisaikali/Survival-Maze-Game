@@ -32,6 +32,29 @@ public class PlayerVitals : MonoBehaviour {
     }
 
     // ----------------------------------- Controlling health functionality ----------------------------------- //
+    public void UpdateHealth(float value) {
+        // increments or decrements the health slider value by the parameter 'value'
+        // value needs to
+
+        
+        float new_value = 0;
+        if (value < 0){
+            //doing damage, only from (-health_left,0)
+            //new_value = Mathf.Clamp(value,-1f*vitals[(int)vN.HEALTH].slider.value, 0f);
+
+            new_value = value;
+            
+        } else {
+            //healing, only from (0,health_lost)
+            float health_lost = vitals[(int)vN.HEALTH].max - vitals[(int)vN.HEALTH].slider.value;
+            new_value = Mathf.Clamp(value,0,health_lost);
+        }
+        
+        vitals[(int)vN.HUNGER].slider.value -= new_value;
+
+        Debug.Log(vitals[(int)vN.HUNGER].slider.value);
+        
+    }
     private void HealthController(List<Vital> vitals)
     {
         if (vitals[(int)vN.HUNGER].slider.value <= 0 && vitals[(int)vN.THIRST].slider.value <= 0) // if hunger is depleted AND thirst is depleted, health depletes at rate x 2
@@ -49,6 +72,7 @@ public class PlayerVitals : MonoBehaviour {
             // TODO: Players dies
         }
     }
+
     // -------------------------------------------------------------------------------------------------------- //
 
     // ------------------- Controlling hunger/thirst functionality ------------------- //
