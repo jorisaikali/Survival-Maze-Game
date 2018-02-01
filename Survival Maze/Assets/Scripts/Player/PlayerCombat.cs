@@ -41,8 +41,8 @@ public class PlayerCombat : MonoBehaviour {
 	void DoDamage(){
 		GameObject target = playerMovement.GetRayCast(LayerMask.GetMask("Entities")); // layer 8 is all entities
         if (target != null){
-			Debug.Log("Did Damage");
-            //target.GetComponent<PlayerVitals>().UpdateHealth(playerStats.damage);
+			PlayerVitals target_vitals = target.GetComponent<PlayerVitals>();
+            target_vitals.UpdateHealth(playerStats.damage);
         }
 	}
 }

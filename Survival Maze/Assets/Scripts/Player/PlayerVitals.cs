@@ -49,8 +49,8 @@ public class PlayerVitals : MonoBehaviour {
             float health_lost = vitals[(int)vN.HEALTH].max - vitals[(int)vN.HEALTH].slider.value;
             new_value = Mathf.Clamp(value,0,health_lost);
         }
-        
-        vitals[(int)vN.HUNGER].slider.value -= new_value;
+
+        vitals[(int)vN.HUNGER].slider.value += new_value;
 
         Debug.Log(vitals[(int)vN.HUNGER].slider.value);
         

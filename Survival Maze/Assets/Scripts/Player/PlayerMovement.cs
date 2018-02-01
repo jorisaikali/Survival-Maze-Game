@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     private float verticalRotation = 0f;
     private GameObject gameObjectHit = null;
     private float camRayLength = 100f;
-    private bool lockMovement = false, lockRotation = false;
+    public bool lockMovement = false, lockRotation = false;
     // --------------------------------------- //
 
     private void Start()
