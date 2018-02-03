@@ -74,14 +74,14 @@ public class PlayerVitals : MonoBehaviour {
     {
         bool running = false;
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetAxis("Vertical") > 0f) // if left shift is pressed AND player is moving forward
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W)) // if left shift is pressed AND player is moving forward
         {
             // set running to true, increase players speed, and begin depleting stamina
             running = true;
             playerMovement.moveSpeed = 10f;
             vital.slider.value -= Time.deltaTime * vital.fallRate;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift)) // if left shift is not pressed anymore
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.W)) // if left shift is not pressed anymore
         {
             // set running to false, and players speed back to normal
             running = false;
