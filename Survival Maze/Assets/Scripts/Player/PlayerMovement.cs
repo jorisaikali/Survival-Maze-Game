@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour {
+using UnityEngine.Networking;
+public class PlayerMovement : NetworkBehaviour {
 
     // ---------- Public variables ---------- //
     public float moveSpeed = 5f;
@@ -16,9 +16,13 @@ public class PlayerMovement : MonoBehaviour {
     private float camRayLength = 100f;
     public bool lockMovement = false, lockRotation = false;
     // --------------------------------------- //
-
+    public override void OnStartLocalPlayer()
+    {
+        GetComponent<Material>().color = Color.blue;
+    }
     private void Start()
     {
+
         // --------- Configuring the cursor --------- //
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -27,6 +31,9 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
+        if (!isLocalPlayer) {
+            return;
+        }
         if (!lockMovement) // Check if movement is locked, if not locked, allow movement
             Move();
 

@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour {
 		if(other.gameObject.layer == 8) { //if collide with anything in entities layer
 			//all entities must have vitals
 			other.gameObject.SendMessage("UpdateHealth",-1f); //this calls the entity's method UpdateHealth
+			Debug.Log("weapon collision");
 		}
 	}
 

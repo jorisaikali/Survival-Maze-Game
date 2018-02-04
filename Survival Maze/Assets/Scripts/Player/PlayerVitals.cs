@@ -68,7 +68,7 @@ public class PlayerVitals : MonoBehaviour {
 
         if (vitals[(int)vN.HEALTH].slider.value <= 0) // if health is fully depleted, player dies
         {
-            Debug.Log("Player died");
+            //Debug.Log("Player died");
             // TODO: Players dies
         }
     }

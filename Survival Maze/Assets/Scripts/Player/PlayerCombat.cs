@@ -28,7 +28,7 @@ public class PlayerCombat : MonoBehaviour {
 
 		//------------Mouse right click attack action ------------//
 		if(Input.GetMouseButtonDown(0)){
-			DoDamage();
+			//DoDamage();
 			weapon.Attack();// Trigger animation
 
 
@@ -41,7 +41,7 @@ public class PlayerCombat : MonoBehaviour {
 	void DoDamage(){
 		GameObject target = playerMovement.GetRayCast(LayerMask.GetMask("Entities")); // layer 8 is all entities
         if (target != null){
-			PlayerVitals target_vitals = target.GetComponent<PlayerVitals>(); // expensive operation
+			//PlayerVitals target_vitals = target.GetComponent<PlayerVitals>(); // expensive operation
             //Debug.Log(target_vitals);
 			//target_vitals.UpdateHealth(playerStats.damage);
         }
