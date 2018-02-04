@@ -87,5 +87,4 @@ public class PlayerMovement : MonoBehaviour {
     public void UnlockMovement() { lockMovement = false; }
     public void UnlockRotation() { lockRotation = false; }
     // -------------------------------------------------------------- //
-
 }

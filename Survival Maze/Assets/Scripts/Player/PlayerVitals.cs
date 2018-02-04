@@ -104,4 +104,65 @@ public class PlayerVitals : MonoBehaviour {
         }
     }
     // ---------------------------------------------------------------------------------- //
+
+    // ------------ Regen health functionality ------------ //
+    public bool RegenHealth(float amount)
+    {
+        // if players health is greater than threshold (0.995), don't allow the player to use regen health item (it's just a waste)
+        if (vitals[(int)vN.HEALTH].slider.value >= 0.995f)
+        {
+            return false; // return false cause the player didn't consume the consumable
+        }
+
+        vitals[(int)vN.HEALTH].slider.value += amount; // if below threshold, increase health by amount
+
+        return true; // return true cause the player consumed the consumable
+    }
+    // ---------------------------------------------------- //
+
+    // ------------ Regen hunger functionality ------------ //
+    public bool RegenHunger(float amount)
+    {
+        // if players hunger is greater than threshold (0.995), don't allow the player to use regen hunger item (it's just a waste)
+        // the reason why this isn't == 1f is because the players hunger will never techincally be at 1f because it's constantly decreasing, this is the same for thirst
+        if (vitals[(int)vN.HUNGER].slider.value >= 0.995f)
+        {
+            return false; // return false cause the player didn't consume the consumable
+        }
+
+        vitals[(int)vN.HUNGER].slider.value += amount; // if below threshold, increase hunger by amount
+
+        return true; // return true cause the player consumed the consumable
+    }
+    // ---------------------------------------------------- //
+
+    // ------------ Regen thirst functionality ------------ //
+    public bool RegenThirst(float amount)
+    {
+        // if players thirst is greater than threshold (0.995), don't allow the player to use regen thirst item (it's just a waste)
+        if (vitals[(int)vN.THIRST].slider.value >= 0.995f)
+        {
+            return false; // return false cause the player didn't consume the consumable 
+        }
+
+        vitals[(int)vN.THIRST].slider.value += amount; // if below threshold, increase thirst by amount
+
+        return true; // return true cause the player consumed the consumable
+    }
+    // ---------------------------------------------------- //
+
+    // ------------ Regen stamina functionality ------------ //
+    public bool RegenStamina(float amount)
+    {
+        // if players stamina is greater than threshold (0.995), don't allow the player to use regen stamina item (it's just a waste)
+        if (vitals[(int)vN.STAMINA].slider.value >= 0.995f)
+        {
+            return false; // return false cause the player didn't consume the consumable
+        }
+
+        vitals[(int)vN.STAMINA].slider.value += amount; // if below threshold, increase stamina by amount
+
+        return true; // return true cause the player consumed the consumable
+    }
+    // ----------------------------------------------------- //
 }
