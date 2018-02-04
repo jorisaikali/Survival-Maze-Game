@@ -16,6 +16,7 @@ public class InventoryUI : MonoBehaviour {
     private InventoryController inventory;
     private InventorySlot[] slots;
     private List<Item> items = new List<Item>();
+    private PlayerMovement playerMovement;
     // ------------------------------------- //
 
     void Start () {
@@ -24,6 +25,8 @@ public class InventoryUI : MonoBehaviour {
         inventory.onResourceChangedCallback += ConvertAndUpdateResourceUI; // subscribing ConvertAndUpdateResourceUI to onResourceChangedCallback event
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>(); // getting a reference to all slots
+
+        playerMovement = gameObject.transform.parent.GetComponent<PlayerMovement>();
     }
 	
 	void Update () {
@@ -34,10 +37,12 @@ public class InventoryUI : MonoBehaviour {
             if (Cursor.lockState == CursorLockMode.Locked) // if cursor is locked, unlock it, if it's unlocked, lock it
             {
                 Cursor.lockState = CursorLockMode.None;
+                playerMovement.LockRotation();
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                playerMovement.UnlockRotation();
             }
             
             Cursor.visible = !Cursor.visible; // set the cursors visibility to opposite of what it currently is

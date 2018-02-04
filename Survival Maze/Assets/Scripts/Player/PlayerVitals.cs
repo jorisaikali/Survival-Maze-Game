@@ -19,14 +19,6 @@ public class PlayerVitals : MonoBehaviour {
         // ------- Getting references to other scripts -------- //
         playerMovement = GetComponent<PlayerMovement>();
         // ---------------------------------------------------- //
-
-        // ------- Getting references to sliders -------- //
-        // if we are having performance issues, we will have to think of another way to do this
-        vitals[(int)vN.HEALTH].slider = GameObject.FindGameObjectWithTag("HealthSlider").GetComponent<Slider>();
-        vitals[(int)vN.HUNGER].slider = GameObject.FindGameObjectWithTag("HungerSlider").GetComponent<Slider>();
-        vitals[(int)vN.THIRST].slider = GameObject.FindGameObjectWithTag("ThirstSlider").GetComponent<Slider>();
-        vitals[(int)vN.STAMINA].slider = GameObject.FindGameObjectWithTag("StaminaSlider").GetComponent<Slider>();
-        // ---------------------------------------------- //
     }
 
     private void Update()
