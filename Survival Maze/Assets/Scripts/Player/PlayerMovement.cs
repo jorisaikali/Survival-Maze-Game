@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour {
+using UnityEngine.Networking;
+public class PlayerMovement : NetworkBehaviour {
 
     // ---------- Public variables ---------- //
     public float moveSpeed = 5f;
@@ -14,11 +14,15 @@ public class PlayerMovement : MonoBehaviour {
     private float verticalRotation = 0f;
     private GameObject gameObjectHit = null;
     private float camRayLength = 100f;
-    private bool lockMovement = false, lockRotation = false;
+    public bool lockMovement = false, lockRotation = false;
     // --------------------------------------- //
-
+    public override void OnStartLocalPlayer()
+    {
+        GetComponent<Material>().color = Color.blue;
+    }
     private void Start()
     {
+
         // --------- Configuring the cursor --------- //
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -27,11 +31,17 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
+        if (!isLocalPlayer) {
+            return;
+        }
         if (!lockMovement) // Check if movement is locked, if not locked, allow movement
             Move();
 
         if (!lockRotation) // Check if rotatio is locked, if not locked, allow rotating
             Look();
+
+
+        
     }
 
     // ------------------------ Moving the player ------------------------ //
@@ -67,7 +77,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         Vector3 rayOrigin = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f, 0));
         RaycastHit hit;
-
+    
         if (Physics.Raycast(rayOrigin, Camera.main.transform.forward, out hit, camRayLength, mask))
         {
             gameObjectHit = hit.transform.gameObject;
