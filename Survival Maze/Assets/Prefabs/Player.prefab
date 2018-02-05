@@ -1043,7 +1043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1298985184656832
 GameObject:
   m_ObjectHideFlags: 1
@@ -3401,7 +3401,6 @@ GameObject:
   - component: {fileID: 33363367633109116}
   - component: {fileID: 136840272846210976}
   - component: {fileID: 23367559757980086}
-  - component: {fileID: 143259758373643430}
   - component: {fileID: 114664033630070050}
   - component: {fileID: 114196971309818888}
   - component: {fileID: 114320016684591138}
@@ -5346,12 +5345,12 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
+  m_TransformSyncMode: 3
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
-  m_MovementTheshold: 0.001
+  m_MovementTheshold: 0.0001
   m_VelocityThreshold: 0.0001
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
@@ -9375,6 +9374,8 @@ MonoBehaviour:
   moveSpeed: 5
   mouseSensitivity: 5
   verticalRange: 60
+  lockMovement: 0
+  lockRotation: 0
 --- !u!114 &114670738346087138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11756,23 +11757,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0.0000009536743}
---- !u!143 &143259758373643430
-CharacterController:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1977876342603606}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &222006603608992228
 CanvasRenderer:
   m_ObjectHideFlags: 1

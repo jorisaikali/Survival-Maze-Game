@@ -9,13 +9,14 @@ public class PlayerMovement : MonoBehaviour {
     public float moveSpeed = 5f;
     public float mouseSensitivity = 5f;
     public float verticalRange = 60f;
+    public bool lockMovement = false, lockRotation = false;
     // -------------------------------------- //
 
     // ---------- Private variables ---------- //
     private float verticalRotation = 0f;
     private GameObject gameObjectHit = null;
     private float camRayLength = 100f;
-    private bool lockMovement = false, lockRotation = false;
+    
     // private CharacterController cc;
     private PlayerMotor motor;
     // --------------------------------------- //
