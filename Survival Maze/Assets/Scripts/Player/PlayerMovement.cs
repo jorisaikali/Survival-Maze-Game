@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
-public class PlayerMovement : NetworkBehaviour {
+
+[RequireComponent(typeof(PlayerMotor))]
+public class PlayerMovement : MonoBehaviour {
 
     // ---------- Public variables ---------- //
     public float moveSpeed = 5f;
@@ -14,12 +15,10 @@ public class PlayerMovement : NetworkBehaviour {
     private float verticalRotation = 0f;
     private GameObject gameObjectHit = null;
     private float camRayLength = 100f;
-    public bool lockMovement = false, lockRotation = false;
+    private bool lockMovement = false, lockRotation = false;
+    // private CharacterController cc;
+    private PlayerMotor motor;
     // --------------------------------------- //
-    public override void OnStartLocalPlayer()
-    {
-        GetComponent<Material>().color = Color.blue;
-    }
     private void Start()
     {
 
@@ -27,13 +26,12 @@ public class PlayerMovement : NetworkBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         // ------------------------------------------ //
+
+        motor = GetComponent<PlayerMotor>();
     }
 
-    private void Update()
+    public void UpdateMe()
     {
-        if (!isLocalPlayer) {
-            return;
-        }
         if (!lockMovement) // Check if movement is locked, if not locked, allow movement
             Move();
 
@@ -47,14 +45,19 @@ public class PlayerMovement : NetworkBehaviour {
     // ------------------------ Moving the player ------------------------ //
     private void Move()
     {
-        float forwardSpeed = Input.GetAxis("Vertical") * moveSpeed;
-        float sideSpeed = Input.GetAxis("Horizontal") * moveSpeed;
+        float forwardSpeed = Input.GetAxisRaw("Vertical");
+        float sideSpeed = Input.GetAxisRaw("Horizontal");
 
-        Vector3 speed = new Vector3(sideSpeed, 0f, forwardSpeed);
-        speed = transform.rotation * speed;
+        Vector3 horizontalMove = transform.right * sideSpeed;
+        Vector3 verticalMove = transform.forward * forwardSpeed;
 
-        CharacterController cc = GetComponent<CharacterController>();
-        cc.SimpleMove(speed);
+        Vector3 velocity = (horizontalMove + verticalMove).normalized * moveSpeed;
+        
+        //Vector3 speed = new Vector3(sideSpeed, 0f, forwardSpeed).normalized * moveSpeed;
+        //speed = transform.rotation * speed;
+        motor.Move(velocity);
+         
+        //cc.SimpleMove(speed);
     }
     // ------------------------------------------------------------------- //
 
