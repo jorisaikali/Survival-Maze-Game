@@ -8,6 +8,7 @@ TagManager:
   - HungerSlider
   - ThirstSlider
   - StaminaSlider
+  - Walls
   layers:
   - Default
   - TransparentFX
