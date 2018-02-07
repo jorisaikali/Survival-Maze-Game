@@ -16,7 +16,7 @@ public class EquippedController : MonoBehaviour {
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one instance of Inventory found");
+            Debug.LogWarning("More than one instance of Equipment found");
             return;
         }
 
