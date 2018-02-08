@@ -4035,6 +4035,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1323423609762088}
   stackCountText: {fileID: 114639621917230748}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114338118292060930}
 --- !u!114 &114037973658511564
 MonoBehaviour:
@@ -4085,6 +4086,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1242974964490346}
   stackCountText: {fileID: 114345284869421118}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114626167670598212}
 --- !u!114 &114049426570248282
 MonoBehaviour:
@@ -4099,6 +4101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114648834052010742}
   removeButton: {fileID: 114382113361217448}
+  inventory: {fileID: 114143997882607154}
+  equipped: {fileID: 114191306138999344}
   text: {fileID: 114792811890479666}
 --- !u!114 &114051464113399928
 MonoBehaviour:
@@ -4222,6 +4226,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1961191651515756}
   stackCountText: {fileID: 114385657531842970}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114146281022520528}
 --- !u!114 &114061239522077790
 MonoBehaviour:
@@ -4318,6 +4323,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1298985184656832}
   stackCountText: {fileID: 114200822426365642}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114494431645907558}
 --- !u!114 &114075398736970880
 MonoBehaviour:
@@ -4492,6 +4498,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1458868095516314}
   stackCountText: {fileID: 114203025291705396}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114776324929669610}
 --- !u!114 &114111614991755050
 MonoBehaviour:
@@ -4558,6 +4565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equippedParent: {fileID: 224437092364286274}
   equippedUI: {fileID: 1922792316124894}
+  equippedController: {fileID: 114191306138999344}
 --- !u!114 &114125499264858800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4767,6 +4775,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1995229985332196}
   stackCountText: {fileID: 114654662605756860}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114184488749940182}
 --- !u!114 &114143997882607154
 MonoBehaviour:
@@ -5128,6 +5137,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1678255234134858}
   stackCountText: {fileID: 114262806969609904}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114310793913593648}
 --- !u!114 &114180825532417176
 MonoBehaviour:
@@ -5578,6 +5588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114153928748280192}
   removeButton: {fileID: 114522117637524024}
+  inventory: {fileID: 114143997882607154}
+  equipped: {fileID: 114191306138999344}
   text: {fileID: 114943938041159578}
 --- !u!114 &114238061151822488
 MonoBehaviour:
@@ -5921,6 +5933,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114165947293246596}
   removeButton: {fileID: 114605535263085382}
+  inventory: {fileID: 114143997882607154}
+  equipped: {fileID: 114191306138999344}
   text: {fileID: 114791909312210934}
 --- !u!114 &114269802392877936
 MonoBehaviour:
@@ -6073,6 +6087,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1483100258130774}
   stackCountText: {fileID: 114256670817378896}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114755160012247476}
 --- !u!114 &114285625560389118
 MonoBehaviour:
@@ -6720,6 +6735,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1471969842730150}
   stackCountText: {fileID: 114743965431414124}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114434595034359230}
 --- !u!114 &114359948666569052
 MonoBehaviour:
@@ -7941,6 +7957,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1842138273999810}
   stackCountText: {fileID: 114965332866774268}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114293589307350754}
 --- !u!114 &114500042370777350
 MonoBehaviour:
@@ -8224,6 +8241,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1210066905015290}
   stackCountText: {fileID: 114687627728102734}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114075398736970880}
 --- !u!114 &114535946337296402
 MonoBehaviour:
@@ -8606,6 +8624,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1231851102101380}
   stackCountText: {fileID: 114865256166039922}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114125499264858800}
 --- !u!114 &114593674860581808
 MonoBehaviour:
@@ -8783,6 +8802,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1209391647437054}
   stackCountText: {fileID: 114145030598082380}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114670738346087138}
 --- !u!114 &114619583798003678
 MonoBehaviour:
@@ -9703,6 +9723,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1180726725079540}
   stackCountText: {fileID: 114734862106536184}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114247759137808604}
 --- !u!114 &114706389226370648
 MonoBehaviour:
@@ -9772,6 +9793,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1319056724455380}
   stackCountText: {fileID: 114483491176375528}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114573548328565650}
 --- !u!114 &114710511672315154
 MonoBehaviour:
@@ -9841,6 +9863,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1590092610672098}
   stackCountText: {fileID: 114782999017425958}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114460837904372616}
 --- !u!114 &114716372100431766
 MonoBehaviour:
@@ -9855,6 +9878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114761492873782392}
   removeButton: {fileID: 114181110602819418}
+  inventory: {fileID: 114143997882607154}
+  equipped: {fileID: 114191306138999344}
   text: {fileID: 114131556607654406}
 --- !u!114 &114719215672433484
 MonoBehaviour:
@@ -10143,6 +10168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114269802392877936}
   removeButton: {fileID: 114061239522077790}
+  inventory: {fileID: 114143997882607154}
+  equipped: {fileID: 114191306138999344}
   text: {fileID: 114133245562690496}
 --- !u!114 &114755160012247476
 MonoBehaviour:
@@ -10342,6 +10369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114340180771557508}
   removeButton: {fileID: 114300585248340020}
+  inventory: {fileID: 114143997882607154}
+  equipped: {fileID: 114191306138999344}
   text: {fileID: 114326272066951952}
 --- !u!114 &114761492873782392
 MonoBehaviour:
@@ -10440,6 +10469,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1060965281491714}
   stackCountText: {fileID: 114037973658511564}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114154620719985252}
 --- !u!114 &114776324929669610
 MonoBehaviour:
@@ -11031,7 +11061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 224944203967130106}
   inventoryUI: {fileID: 1209289538284590}
-  mouse: 0
+  inventory: {fileID: 114143997882607154}
 --- !u!114 &114851827038868740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11413,6 +11443,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1349766447206984}
   stackCountText: {fileID: 114372081860117594}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114898991593827684}
 --- !u!114 &114929963264140526
 MonoBehaviour:
@@ -11430,6 +11461,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1359261540249038}
   stackCountText: {fileID: 114422487454824074}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114025552168306482}
 --- !u!114 &114932936132229854
 MonoBehaviour:
@@ -11811,6 +11843,7 @@ MonoBehaviour:
   stackPanel: {fileID: 1408335467947724}
   stackCountText: {fileID: 114316197761454896}
   stackCount: 0
+  inventory: {fileID: 114143997882607154}
   text: {fileID: 114554855157219324}
 --- !u!124 &124289243193715866
 Behaviour:

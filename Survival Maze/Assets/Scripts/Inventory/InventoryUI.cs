@@ -12,13 +12,14 @@ public class InventoryUI : MonoBehaviour {
     // ------------------------------------ //
 
     // --------- Private variables --------- //
-    private InventoryController inventory;
     private InventorySlot[] slots;
     private PlayerMovement playerMovement;
+
+    [SerializeField]
+    private InventoryController inventory;
     // ------------------------------------- //
 
     void Start () {
-        inventory = InventoryController.instance; // getting the singleton instance of InventoryController
         inventory.onItemChangedCallback += UpdateUI; // subscribing UpdateUI() to onItemChangedCallback event
         inventory.onResourceChangedCallback += ConvertAndUpdateResourceUI; // subscribing ConvertAndUpdateResourceUI to onResourceChangedCallback event
 

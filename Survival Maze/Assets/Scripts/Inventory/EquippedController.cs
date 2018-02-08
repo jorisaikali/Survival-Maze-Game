@@ -8,6 +8,7 @@ public class EquippedController : MonoBehaviour {
     // ----------------- Making EquippedController a singleton ----------------- //
     // A singleton is a class that is always "alive". Rather than making an instance of it to call it,
     // you can call it as if it were static, EquippedController.instance
+    /*
     #region Singleton
 
     public static EquippedController instance;
@@ -24,6 +25,7 @@ public class EquippedController : MonoBehaviour {
     }
 
     #endregion
+    */
     // ------------------------------------------------------------------------- //
 
     // ----------- Public variables ----------- //

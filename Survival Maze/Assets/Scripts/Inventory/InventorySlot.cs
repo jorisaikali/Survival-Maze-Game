@@ -16,6 +16,9 @@ public class InventorySlot : MonoBehaviour {
 
     // --------- Private variables --------- //
     private Item item; // reference to what item is in that slot
+
+    [SerializeField]
+    private InventoryController inventory;
     // ------------------------------------- //
 
     // ----------- Testing variables ----------- //
@@ -78,8 +81,8 @@ public class InventorySlot : MonoBehaviour {
     // ----------- Remove button functionality ----------- //
     public void OnRemoveButton()
     {
-        Instantiate(item.mesh, InventoryController.instance.transform.position, InventoryController.instance.transform.rotation); // drops item on the ground where the player is (test for now)
-        InventoryController.instance.Remove(item); // Removes item from the inventory list (found in the Inventory script)
+        Instantiate(item.mesh, transform.root.position, transform.root.rotation); // drops item on the ground where the player is (test for now)
+        inventory.Remove(item);
     }
     // --------------------------------------------------- //
 
@@ -91,12 +94,12 @@ public class InventorySlot : MonoBehaviour {
             if (item.itemType == ItemType.Consumable)
             {
                 Consumable consumable = (Consumable)item;
-                consumable.Use(InventoryController.instance.gameObject);
+                consumable.Use(inventory.gameObject);
             }
             else if (item.itemType == ItemType.Equipment)
             {
                 Equipment equipment = (Equipment)item;
-                equipment.Use();
+                equipment.Use(inventory.gameObject);
             }
             // Resource items don't have an if statment because you can't use Resource items, they are just meant for crafting
         }
