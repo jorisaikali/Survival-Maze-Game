@@ -11,13 +11,14 @@ public class EquipmentUI : MonoBehaviour {
     // ------------------------------------ //
 
     // --------- Private variables --------- //
-    private EquippedController equippedController;
     private EquipmentSlot[] slots;
+
+    [SerializeField]
+    private EquippedController equippedController;
     // ------------------------------------- //
 
     private void Start()
     {
-        equippedController = EquippedController.instance; // getting a reference to EquippedController singleton
         equippedController.onEquippedChangedCallback += UpdateUI; // subscribing UpdateUI() to the onEquippedChangedCallback
 
         slots = equippedParent.GetComponentsInChildren<EquipmentSlot>(); // getting all slots in the equipment panel

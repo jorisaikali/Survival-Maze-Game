@@ -24,9 +24,9 @@ public class PlayerCombat : MonoBehaviour {
 	}
 	
 
-	void Update () {
+	public void UpdateMe () {
 
-		//------------Mouse right click attack action ------------//
+		//------------Mouse left click attack action ------------//
 		if(Input.GetMouseButtonDown(0)){
 			//DoDamage();
 			weapon.Attack();// Trigger animation

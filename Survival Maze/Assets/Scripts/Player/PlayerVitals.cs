@@ -21,7 +21,7 @@ public class PlayerVitals : MonoBehaviour {
         // ---------------------------------------------------- //
     }
 
-    private void Update()
+    public void UpdateMe()
     {
         // --------- Controlling the vitals --------- //
         HealthController(vitals); // Updates the health vital

@@ -13,6 +13,12 @@ public class EquipmentSlot : MonoBehaviour {
 
     // ------- Private variables ------- //
     private Equipment equipment;
+
+    [SerializeField]
+    private InventoryController inventory;
+
+    [SerializeField]
+    private EquippedController equipped;
     // --------------------------------- //
 
     // ------- Testing variables (to be removed later) ------- //
@@ -56,8 +62,8 @@ public class EquipmentSlot : MonoBehaviour {
     // ------- When remove button is pressed on equipment slot ------- //
     public void OnRemoveButton()
     {
-        InventoryController.instance.Add(equipment); // add the item back to the inventory
-        EquippedController.instance.Unequip(equipment); // remove it from the list of equipped items
+        inventory.Add(equipment); // add the item back to the inventory
+        equipped.Unequip(equipment); // remove it from the list of equipped items
     }
     // --------------------------------------------------------------- //
 }

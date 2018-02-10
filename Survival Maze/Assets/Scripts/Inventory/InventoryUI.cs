@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
 // This script is on the Canvas game object
@@ -13,14 +12,14 @@ public class InventoryUI : MonoBehaviour {
     // ------------------------------------ //
 
     // --------- Private variables --------- //
-    private InventoryController inventory;
     private InventorySlot[] slots;
-    private List<Item> items = new List<Item>();
     private PlayerMovement playerMovement;
+
+    [SerializeField]
+    private InventoryController inventory;
     // ------------------------------------- //
 
     void Start () {
-        inventory = InventoryController.instance; // getting the singleton instance of InventoryController
         inventory.onItemChangedCallback += UpdateUI; // subscribing UpdateUI() to onItemChangedCallback event
         inventory.onResourceChangedCallback += ConvertAndUpdateResourceUI; // subscribing ConvertAndUpdateResourceUI to onResourceChangedCallback event
 
@@ -37,15 +36,29 @@ public class InventoryUI : MonoBehaviour {
             if (Cursor.lockState == CursorLockMode.Locked) // if cursor is locked, unlock it, if it's unlocked, lock it
             {
                 Cursor.lockState = CursorLockMode.None;
-                playerMovement.LockRotation();
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                playerMovement.UnlockRotation();
             }
             
-            Cursor.visible = !Cursor.visible; // set the cursors visibility to opposite of what it currently is
+            if (playerMovement.GetLockRotation()) // if player rotation is locked, unlock it, if unlocked, lock it
+            {
+                playerMovement.UnlockRotation();
+            }
+            else
+            {
+                playerMovement.LockRotation();
+            }
+
+            if (Cursor.visible) // if cursor is visible, make it invisible, if invisible, make it visible
+            {
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.visible = true;
+            }
         }
 	}
 
