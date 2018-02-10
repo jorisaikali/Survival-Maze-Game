@@ -14,9 +14,9 @@ MonoBehaviour:
   name: Apple
   icon: {fileID: 21300000, guid: f5f671fb226f0b8468832f038c055b08, type: 3}
   isDefaultItem: 0
-  isResource: 0
-  inInventory: 0
   itemType: 0
   mesh: {fileID: 1722965917761484, guid: d4c92519127da9546bfa5acd08a6f7f4, type: 2}
   type: 2
   regenAmount: 0.1
+  inventory: {fileID: 114143997882607154, guid: c09ecb6e6bde2cd42972c4d5c9d80bb8,
+    type: 2}

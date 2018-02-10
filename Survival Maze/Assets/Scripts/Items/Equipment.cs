@@ -13,13 +13,13 @@ public class Equipment : Item {
     // -------------------------------------- //
 
     // ------------ Overriding the Item Use() function ------------ //
-    public override void Use()
+    public override void Use(GameObject player)
     {
         base.Use();
 
-        if (EquippedController.instance.Equip(this)) // if equipping this item is successful, remove the equipment from the inventory
+        if (player.GetComponent<EquippedController>().Equip(this)) // if equipping this item is successful, remove the equipment from the inventory
         {
-            InventoryController.instance.Remove(this);
+            player.GetComponent<InventoryController>().Remove(this);
         }
     }
     // ------------------------------------------------------------ //

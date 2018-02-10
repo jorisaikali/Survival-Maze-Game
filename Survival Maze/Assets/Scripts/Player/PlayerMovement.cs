@@ -96,6 +96,9 @@ public class PlayerMovement : MonoBehaviour {
     // -------------------------------------------------------------------------------------------- //
 
     // ---------- Locking/Unlocking player movement/rotate ---------- //
+    public bool GetLockMovement() { return lockMovement; }
+    public bool GetLockRotation() { return lockRotation; }
+
     public void LockMovement() { lockMovement = true; }
     public void LockRotation() { lockRotation = true; }
     public void UnlockMovement() { lockMovement = false; }

@@ -8,6 +8,7 @@ public class InventoryController : MonoBehaviour {
 
     // This is a singleton, singletons are classes that are always "alive". You can call them without creating an instance of them (Class class = new Class();),
     // the way you call singletons is like this, ClassName.instance, instance is made in the Awake() function (hidden in the region, press the + on the left to show it)
+    /*
     #region Singleton
 
     public static InventoryController instance;
@@ -24,6 +25,7 @@ public class InventoryController : MonoBehaviour {
     }
 
     #endregion
+    */
 
     // -------------------------- Public variables -------------------------- //
     public int space = 20; // limiting the inventory space

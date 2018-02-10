@@ -35,7 +35,7 @@ public class Consumable : Item {
 
         if (wasConsumed) // if the consumable was consumed
         {
-            InventoryController.instance.Remove(this); // remove it from the inventory
+            player.GetComponent<InventoryController>().Remove(this); // remove it from the inventory
         }
     }
     // -------------------------------------------------------------------------- //
