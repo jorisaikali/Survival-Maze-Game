@@ -11,6 +11,11 @@ public class PlayerController : NetworkBehaviour {
 	PlayerVitals playerVitals;
 
 	void Start () {
+		// Tag the local player to avoid self-collisions
+		if(isLocalPlayer) {
+			gameObject.tag = "LocalPlayer";
+		}
+
 		playerCombat = GetComponent<PlayerCombat>();
 		playerMovement = GetComponent<PlayerMovement>();
 		playerVitals = GetComponent<PlayerVitals>();

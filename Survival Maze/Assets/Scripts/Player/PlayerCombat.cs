@@ -46,4 +46,5 @@ public class PlayerCombat : MonoBehaviour {
 			//target_vitals.UpdateHealth(playerStats.damage);
         }
 	}
+	
 }
