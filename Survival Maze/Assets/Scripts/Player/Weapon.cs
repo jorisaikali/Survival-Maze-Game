@@ -13,10 +13,9 @@ public class Weapon : NetworkBehaviour {
 			//Debug.Log("weapon collision");
 		}
 	}
-
 	void ApplyDamage(GameObject target) {
 		Debug.Log("hit other player");
-		target.SendMessage("UpdateHealth",-1f);
+		//target.SendMessage("UpdateHealth",-1f);
 	}
 
 	// ------------Weapon attack animation and return animation -------- //
