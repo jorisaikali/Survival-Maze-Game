@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HealthSlider
+  - HungerSlider
+  - ThirstSlider
+  - StaminaSlider
+  - LocalPlayer
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Entities
   - 
   - 
   - 

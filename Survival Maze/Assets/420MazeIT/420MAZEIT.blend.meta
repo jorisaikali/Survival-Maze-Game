@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: f0a2245ef3e352542b890b0060e56a40
+timeCreated: 1517885286
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Floor
+    100004: Walls
+    100006: X-Moving_Planes
+    100008: X-Moving_Planes_002
+    100010: X-Moving_Planes_003
+    100012: X-Moving_Planes_006
+    100014: X-Moving_Planes_008
+    100016: X-Moving_Planes_009
+    100018: X-Moving_Planes_011
+    100020: X-Moving_Planes_013
+    100022: X-Moving_Planes_015
+    100024: Y-Moving_Planes
+    100026: Y-Moving_Planes_001
+    100028: Y-Moving_Planes_002
+    100030: Y-Moving_Planes_003
+    100032: Y-Moving_Planes_005
+    100034: Y-Moving_Planes_007
+    100036: Y-Moving_Planes_008
+    100038: Y-Moving_Planes_009
+    100040: Y-Moving_Planes_010
+    100042: Y-Moving_Planes_013
+    100044: Y-Moving_Planes_015
+    400000: //RootNode
+    400002: Floor
+    400004: Walls
+    400006: X-Moving_Planes
+    400008: X-Moving_Planes_002
+    400010: X-Moving_Planes_003
+    400012: X-Moving_Planes_006
+    400014: X-Moving_Planes_008
+    400016: X-Moving_Planes_009
+    400018: X-Moving_Planes_011
+    400020: X-Moving_Planes_013
+    400022: X-Moving_Planes_015
+    400024: Y-Moving_Planes
+    400026: Y-Moving_Planes_001
+    400028: Y-Moving_Planes_002
+    400030: Y-Moving_Planes_003
+    400032: Y-Moving_Planes_005
+    400034: Y-Moving_Planes_007
+    400036: Y-Moving_Planes_008
+    400038: Y-Moving_Planes_009
+    400040: Y-Moving_Planes_010
+    400042: Y-Moving_Planes_013
+    400044: Y-Moving_Planes_015
+    2100000: unnamed
+    2300000: Floor
+    2300002: Walls
+    2300004: X-Moving_Planes
+    2300006: X-Moving_Planes_002
+    2300008: X-Moving_Planes_003
+    2300010: X-Moving_Planes_006
+    2300012: X-Moving_Planes_008
+    2300014: X-Moving_Planes_009
+    2300016: X-Moving_Planes_011
+    2300018: X-Moving_Planes_013
+    2300020: X-Moving_Planes_015
+    2300022: Y-Moving_Planes
+    2300024: Y-Moving_Planes_001
+    2300026: Y-Moving_Planes_002
+    2300028: Y-Moving_Planes_003
+    2300030: Y-Moving_Planes_005
+    2300032: Y-Moving_Planes_007
+    2300034: Y-Moving_Planes_008
+    2300036: Y-Moving_Planes_009
+    2300038: Y-Moving_Planes_010
+    2300040: Y-Moving_Planes_013
+    2300042: Y-Moving_Planes_015
+    3300000: Floor
+    3300002: Walls
+    3300004: X-Moving_Planes
+    3300006: X-Moving_Planes_002
+    3300008: X-Moving_Planes_003
+    3300010: X-Moving_Planes_006
+    3300012: X-Moving_Planes_008
+    3300014: X-Moving_Planes_009
+    3300016: X-Moving_Planes_011
+    3300018: X-Moving_Planes_013
+    3300020: X-Moving_Planes_015
+    3300022: Y-Moving_Planes
+    3300024: Y-Moving_Planes_001
+    3300026: Y-Moving_Planes_002
+    3300028: Y-Moving_Planes_003
+    3300030: Y-Moving_Planes_005
+    3300032: Y-Moving_Planes_007
+    3300034: Y-Moving_Planes_008
+    3300036: Y-Moving_Planes_009
+    3300038: Y-Moving_Planes_010
+    3300040: Y-Moving_Planes_013
+    3300042: Y-Moving_Planes_015
+    4300000: Walls
+    4300002: X-Moving_Planes
+    4300004: X-Moving_Planes_015
+    4300006: X-Moving_Planes_011
+    4300008: X-Moving_Planes_009
+    4300010: X-Moving_Planes_008
+    4300012: X-Moving_Planes_006
+    4300014: X-Moving_Planes_003
+    4300016: X-Moving_Planes_002
+    4300018: X-Moving_Planes_013
+    4300020: Floor
+    4300022: Y-Moving_Planes
+    4300024: Y-Moving_Planes_015
+    4300026: Y-Moving_Planes_013
+    4300028: Y-Moving_Planes_010
+    4300030: Y-Moving_Planes_009
+    4300032: Y-Moving_Planes_008
+    4300034: Y-Moving_Planes_007
+    4300036: Y-Moving_Planes_005
+    4300038: Y-Moving_Planes_003
+    4300040: Y-Moving_Planes_002
+    4300042: Y-Moving_Planes_001
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,49 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMotor))]
 public class PlayerMovement : MonoBehaviour {
 
     // ---------- Public variables ---------- //
     public float moveSpeed = 5f;
     public float mouseSensitivity = 5f;
     public float verticalRange = 60f;
+    public bool lockMovement = false, lockRotation = false;
     // -------------------------------------- //
 
     // ---------- Private variables ---------- //
     private float verticalRotation = 0f;
     private GameObject gameObjectHit = null;
     private float camRayLength = 100f;
-    private bool lockMovement = false, lockRotation = false;
+    
+    // private CharacterController cc;
+    private PlayerMotor motor;
     // --------------------------------------- //
-
     private void Start()
     {
+
         // --------- Configuring the cursor --------- //
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         // ------------------------------------------ //
+
+        motor = GetComponent<PlayerMotor>();
     }
 
-    private void Update()
+    public void UpdateMe()
     {
         if (!lockMovement) // Check if movement is locked, if not locked, allow movement
             Move();
 
         if (!lockRotation) // Check if rotatio is locked, if not locked, allow rotating
             Look();
+
+
+        
     }
 
     // ------------------------ Moving the player ------------------------ //
     private void Move()
     {
-        float forwardSpeed = Input.GetAxis("Vertical") * moveSpeed;
-        float sideSpeed = Input.GetAxis("Horizontal") * moveSpeed;
+        float forwardSpeed = Input.GetAxisRaw("Vertical");
+        float sideSpeed = Input.GetAxisRaw("Horizontal");
 
-        Vector3 speed = new Vector3(sideSpeed, 0f, forwardSpeed);
-        speed = transform.rotation * speed;
+        Vector3 horizontalMove = transform.right * sideSpeed;
+        Vector3 verticalMove = transform.forward * forwardSpeed;
 
-        CharacterController cc = GetComponent<CharacterController>();
-        cc.SimpleMove(speed);
+        Vector3 velocity = (horizontalMove + verticalMove).normalized * moveSpeed;
+        
+        //Vector3 speed = new Vector3(sideSpeed, 0f, forwardSpeed).normalized * moveSpeed;
+        //speed = transform.rotation * speed;
+        motor.Move(velocity);
+         
+        //cc.SimpleMove(speed);
     }
     // ------------------------------------------------------------------- //
 
@@ -67,7 +81,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         Vector3 rayOrigin = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f, 0));
         RaycastHit hit;
-
+    
         if (Physics.Raycast(rayOrigin, Camera.main.transform.forward, out hit, camRayLength, mask))
         {
             gameObjectHit = hit.transform.gameObject;
@@ -82,10 +96,12 @@ public class PlayerMovement : MonoBehaviour {
     // -------------------------------------------------------------------------------------------- //
 
     // ---------- Locking/Unlocking player movement/rotate ---------- //
+    public bool GetLockMovement() { return lockMovement; }
+    public bool GetLockRotation() { return lockRotation; }
+
     public void LockMovement() { lockMovement = true; }
     public void LockRotation() { lockRotation = true; }
     public void UnlockMovement() { lockMovement = false; }
     public void UnlockRotation() { lockRotation = false; }
     // -------------------------------------------------------------- //
-
 }
