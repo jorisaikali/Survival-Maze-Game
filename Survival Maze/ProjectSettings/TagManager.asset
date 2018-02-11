@@ -8,6 +8,7 @@ TagManager:
   - HungerSlider
   - ThirstSlider
   - StaminaSlider
+  - LocalPlayer
   layers:
   - Default
   - TransparentFX
