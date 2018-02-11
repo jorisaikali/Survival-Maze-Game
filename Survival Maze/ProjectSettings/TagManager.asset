@@ -9,6 +9,7 @@ TagManager:
   - ThirstSlider
   - StaminaSlider
   - LocalPlayer
+  - Walls
   layers:
   - Default
   - TransparentFX
