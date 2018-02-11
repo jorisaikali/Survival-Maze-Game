@@ -10,18 +10,25 @@ public class Weapon : NetworkBehaviour {
 		if(other.gameObject.layer == 8 && other.gameObject.tag != "LocalPlayer") { //if collide with anything in entities layer
 			//all entities must have vitals
 			 //this calls the entity's method UpdateHealth
-			//Debug.Log("weapon collision");
+			//Debug.Log(other.name);
+            CmdApplyDamage(other.name);
 		}
 	}
-	void ApplyDamage(GameObject target) {
-		Debug.Log("hit other player");
-		//target.SendMessage("UpdateHealth",-1f);
+    // Server commands can only use primitives as parameters therefore we need to use ids rather than game objects
+    [Command]
+	void CmdApplyDamage(string player_id) {
+		Debug.Log("hit" + player_id);
+
+        //target.SendMessage("UpdateHealth",-1f);
 	}
 
-	// ------------Weapon attack animation and return animation -------- //
-	public void ReturnStance(){
+    // ------------Weapon attack animation and return animation -------- //
+    [Client]
+    public void ReturnStance(){
 		transform.Rotate(-50f,0f,0f);
 	}
+
+    [Client]
 	public void Attack(){
 		transform.Rotate(50f,0f,0f);
 	}

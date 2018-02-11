@@ -9,7 +9,7 @@ public class PlayerController : NetworkBehaviour {
 	PlayerCombat playerCombat;
 	PlayerMovement playerMovement;
 	PlayerVitals playerVitals;
-
+    private string ID;
 	void Start () {
 		// Tag the local player to avoid self-collisions
 		if(isLocalPlayer) {
@@ -20,6 +20,9 @@ public class PlayerController : NetworkBehaviour {
 		playerMovement = GetComponent<PlayerMovement>();
 		playerVitals = GetComponent<PlayerVitals>();
 
+        // get a unique name for player
+        ID = "P"+GetComponent<NetworkIdentity>().netId;
+        transform.name = ID;
 	}
 	
 	// Update is called once per frame
