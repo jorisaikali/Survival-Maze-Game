@@ -12640,7 +12640,7 @@ MonoBehaviour:
     fallRate: 3
   - slider: {fileID: 114810259462339218}
     max: 100
-    fallRate: 0.00075
+    fallRate: 0.0075
   - slider: {fileID: 114756228328000016}
     max: 100
     fallRate: 0.0005
@@ -14917,6 +14917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aacf2c97ecb0078459783a27d5c1d12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 1043948512439666}
   componentsToDisable:
   - {fileID: 114940356361528502}
   - {fileID: 20900881394885778}
