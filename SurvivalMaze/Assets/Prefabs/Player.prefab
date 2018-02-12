@@ -12640,7 +12640,7 @@ MonoBehaviour:
     fallRate: 3
   - slider: {fileID: 114810259462339218}
     max: 100
-    fallRate: 0.0075
+    fallRate: 0.00075
   - slider: {fileID: 114756228328000016}
     max: 100
     fallRate: 0.0005
