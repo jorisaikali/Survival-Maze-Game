@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class PlayerController : NetworkBehaviour {
+[RequireComponent(typeof(PlayerCombat))]
+[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerVitals))]
+public class Player : NetworkBehaviour {
 
 	// Aggregate all components for updating
 	PlayerCombat playerCombat;
 	PlayerMovement playerMovement;
 	PlayerVitals playerVitals;
-    private string ID;
 	void Start () {
 		// Tag the local player to avoid self-collisions
 		if(isLocalPlayer) {
@@ -21,10 +23,14 @@ public class PlayerController : NetworkBehaviour {
 		playerVitals = GetComponent<PlayerVitals>();
 
         // get a unique name for player
-        ID = "P"+GetComponent<NetworkIdentity>().netId;
-        transform.name = ID;
 	}
-	
+
+
+	public void TakeDamage(float dmg) {
+		playerVitals = GetComponent<PlayerVitals>();
+		Debug.Log("Damage called : "+ playerVitals);
+		playerVitals.UpdateHealth(dmg);
+	}
 	// Update is called once per frame
 	void Update () {
 		if(!isLocalPlayer) {
@@ -34,4 +40,6 @@ public class PlayerController : NetworkBehaviour {
 		playerMovement.UpdateMe();
 		playerVitals.UpdateMe();
 	}
+
+
 }

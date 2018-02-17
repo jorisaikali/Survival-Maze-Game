@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class PlayerVitals : MonoBehaviour {
+public class PlayerVitals : NetworkBehaviour {
 
     // -------- Public variables -------- //
+    
+    public float testHealthMax = 100f;
+
+    [SyncVar]
+    public float testHealth = 100f;
     public List<Vital> vitals;
     // ---------------------------------- //
 
@@ -34,10 +40,9 @@ public class PlayerVitals : MonoBehaviour {
     // ----------------------------------- Controlling health functionality ----------------------------------- //
     public void UpdateHealth(float value) {
         // increments or decrements the health slider value by the parameter 'value'
-        // value needs to
-
         
         float new_value = 0;
+        //TODO: need to clamp input value to avoid unknown reactions
         if (value < 0){
             //doing damage, only from (-health_left,0)
             //new_value = Mathf.Clamp(value,-1f*vitals[(int)vN.HEALTH].slider.value, 0f);
@@ -46,13 +51,17 @@ public class PlayerVitals : MonoBehaviour {
             
         } else {
             //healing, only from (0,health_lost)
-            float health_lost = vitals[(int)vN.HEALTH].max - vitals[(int)vN.HEALTH].slider.value;
-            new_value = Mathf.Clamp(value,0,health_lost);
+             
+            new_value = value;
         }
 
-        vitals[(int)vN.HUNGER].slider.value += new_value;
+        testHealth += value;
 
-        Debug.Log(vitals[(int)vN.HUNGER].slider.value);
+        Debug.Log("health: " + testHealth);
+
+        if(testHealth <= 0) {
+            Debug.Log("Player: " +transform.name + " is dead.");
+        }
         
     }
     private void HealthController(List<Vital> vitals)

@@ -2162,7 +2162,7 @@ GameObject:
   - component: {fileID: 136903143257671214}
   - component: {fileID: 114625937697621790}
   - component: {fileID: 54380943020030558}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6865,12 +6865,12 @@ GameObject:
   - component: {fileID: 114351483663493186}
   - component: {fileID: 114655923587844068}
   - component: {fileID: 114194450739171686}
-  - component: {fileID: 114940356361528502}
   - component: {fileID: 114191306138999344}
   - component: {fileID: 114143997882607154}
   - component: {fileID: 114470201764884278}
   - component: {fileID: 54017361338110746}
   - component: {fileID: 114011747698954886}
+  - component: {fileID: 114831304073821202}
   - component: {fileID: 114137128217298926}
   m_Layer: 8
   m_Name: Player
@@ -7130,7 +7130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1977876342603606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2823737, y: 1.89, z: 4.4484863}
+  m_LocalPosition: {x: 1.1670883, y: 1.62, z: 1.9722936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4239208154490136}
@@ -7185,11 +7185,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!23 &23332282413987986
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -7199,6 +7199,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -7214,6 +7215,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -7231,6 +7233,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -7246,6 +7249,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -12630,6 +12634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cdab0265778ea4b973e3d6e81644e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testHealthMax: 100
+  testHealth: 100
   vitals:
   - slider: {fileID: 114794491131983756}
     max: 100
@@ -14914,13 +14920,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   componentsToDisable:
-  - {fileID: 114940356361528502}
+  - {fileID: 114831304073821202}
   - {fileID: 20900881394885778}
   - {fileID: 81653959436730568}
   - {fileID: 114143997882607154}
   - {fileID: 114191306138999344}
   - {fileID: 114849797204824966}
   - {fileID: 114117866930612820}
+  - {fileID: 114625937697621790}
 --- !u!114 &114470380304044716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20764,6 +20771,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114831304073821202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977876342603606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072f549bf9d057499625a87e4344081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114833513837835644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21909,17 +21927,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 3}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &114940356361528502
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1977876342603606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1cdacab2ef5df543af59667233781f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114943938041159578
 MonoBehaviour:
   m_ObjectHideFlags: 1
